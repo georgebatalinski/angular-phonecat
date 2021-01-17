@@ -1,0 +1,41 @@
+/*!
+ * Sizzle CSS Selector Engine v2.3.3
+ * https://sizzlejs.com/
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license
+ * http://jquery.org/license
+ *
+ * Date: 2016-08-08
+ */
+
+/*!
+ * jQuery JavaScript Library v3.3.1
+ * https://jquery.com/
+ *
+ * Includes Sizzle.js
+ * https://sizzlejs.com/
+ *
+ * Copyright JS Foundation and other contributors
+ * Released under the MIT license
+ * https://jquery.org/license
+ *
+ * Date: 2018-01-20T17:24Z
+ */
+
+/**
+ * @license AngularJS v1.8.0
+ * (c) 2010-2020 Google, Inc. http://angularjs.org
+ * License: MIT
+ */
+
+/**
+ * State-based routing for AngularJS 1.x
+ * NOTICE: This monolithic bundle also bundles the @uirouter/core code.
+ *         This causes it to be incompatible with plugins that depend on @uirouter/core.
+ *         We recommend switching to the ui-router-core.js and ui-router-angularjs.js bundles instead.
+ *         For more information, see https://ui-router.github.io/blog/uirouter-for-angularjs-umd-bundles
+ * @version v1.0.29
+ * @link https://ui-router.github.io
+ * @license MIT License, http://www.opensource.org/licenses/MIT
+ */
