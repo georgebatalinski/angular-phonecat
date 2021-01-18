@@ -6,16 +6,16 @@ import "./lib/angular-animate/angular-animate.js";
 import "./lib/angular-resource/angular-resource.js";
 import "./lib/ui-router/angular-ui-router.min.js";
 //import * as configFn from "./app.config";
-//import core from './core/core.module';
-//import phonelist from './phone-list/phone-list.module';
+import core from './core/core.module';
+import phonelist from './phone-list/phone-list.module';
 // Define the `phonecatApp` module
 
 const app = angular.module('phonecatApp', [
   'ngAnimate',
   'ui.router',
-  //'core',
-  // 'phoneDetail',
-  //'phoneList'
+  'core',
+  //'phoneDetail',
+  'phoneList'
 ]).config(($stateProvider) => {
   var helloState = {
     name: 'phones',
@@ -32,8 +32,8 @@ const app = angular.module('phonecatApp', [
   $stateProvider.state(helloState);
   $stateProvider.state(aboutState);
 });
-//core(angular);
-//phonelist(angular);
+core(angular);
+phonelist(angular);
 
 angular.element(function() {
   angular.bootstrap(document, ['phonecatApp']);

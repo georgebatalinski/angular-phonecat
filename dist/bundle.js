@@ -88810,6 +88810,16 @@ module.exports = angular;
 
 /***/ }),
 
+/***/ 867:
+/***/ ((module) => {
+
+// Module
+var code = "<div class=\"container-fluid\"> <div class=\"row\"> <div class=\"col-md-2\"> <p> Search: <input ng-model=\"$ctrl.query\"/> </p> <p> Sort by: <select ng-model=\"$ctrl.orderProp\"> <option value=\"name\">Alphabetical</option> <option value=\"age\">Newest</option> </select> </p> </div> <div class=\"col-md-10\"> <ul class=\"phones\"> <li ng-repeat=\"phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp\" class=\"thumbnail phone-list-item\"> <a href=\"#!/phones/{{phone.id}}\" class=\"thumb\"> <img ng-src=\"{{phone.imageUrl}}\" alt=\"{{phone.name}}\"/> </a> <a href=\"#!/phones/{{phone.id}}\">{{phone.name}}</a> <p>{{phone.snippet}}</p> </li> </ul> </div> </div> </div> ";
+// Exports
+module.exports = code;
+
+/***/ }),
+
 /***/ 352:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
@@ -88824,12 +88834,15 @@ __webpack_require__(462);
 __webpack_require__(152);
 __webpack_require__(416);
 //import * as configFn from "./app.config";
-//import core from './core/core.module';
-//import phonelist from './phone-list/phone-list.module';
+var core_module_1 = __webpack_require__(723);
+var phone_list_module_1 = __webpack_require__(707);
 // Define the `phonecatApp` module
 var app = angular.module('phonecatApp', [
     'ngAnimate',
     'ui.router',
+    'core',
+    //'phoneDetail',
+    'phoneList'
 ]).config(function ($stateProvider) {
     var helloState = {
         name: 'phones',
@@ -88844,10 +88857,80 @@ var app = angular.module('phonecatApp', [
     $stateProvider.state(helloState);
     $stateProvider.state(aboutState);
 });
-//core(angular);
-//phonelist(angular);
+core_module_1.default(angular);
+phone_list_module_1.default(angular);
 angular.element(function () {
     angular.bootstrap(document, ['phonecatApp']);
+});
+
+
+/***/ }),
+
+/***/ 723:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+var phone_service_1 = __webpack_require__(130);
+exports.default = (function (app) {
+    var module = app.module('core', []);
+    module.factory('Phone', phone_service_1.default);
+});
+
+
+/***/ }),
+
+/***/ 130:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+PhoneFactory.$inject = ['$resource'];
+function PhoneFactory($resource) {
+    return $resource('phones/:phoneId.json', {}, {
+        query: {
+            method: 'GET',
+            params: { phoneId: 'phones' },
+            isArray: true
+        }
+    });
+}
+exports.default = PhoneFactory;
+
+
+/***/ }),
+
+/***/ 992:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.default = {
+    template: __webpack_require__(867),
+    controller: ['Phone',
+        function PhoneListController(Phone) {
+            this.phones = Phone.query();
+            this.orderProp = 'age';
+        }
+    ]
+};
+
+
+/***/ }),
+
+/***/ 707:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+var phone_list_component_1 = __webpack_require__(992);
+exports.default = (function (app) {
+    var module = app.module('phoneList', ['core']);
+    module.component('phoneList', phone_list_component_1.default);
 });
 
 
