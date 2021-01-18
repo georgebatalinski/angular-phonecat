@@ -13,6 +13,7 @@ import phonelist from './phone-list/phone-list.module';
 const app = angular.module('phonecatApp', [
   'ngAnimate',
   'ui.router',
+  'ngResource',
   'core',
   //'phoneDetail',
   'phoneList'

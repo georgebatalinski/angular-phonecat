@@ -88840,6 +88840,7 @@ var phone_list_module_1 = __webpack_require__(707);
 var app = angular.module('phonecatApp', [
     'ngAnimate',
     'ui.router',
+    'ngResource',
     'core',
     //'phoneDetail',
     'phoneList'
@@ -88888,6 +88889,7 @@ exports.default = (function (app) {
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 PhoneFactory.$inject = ['$resource'];
+/*ngInject*/
 function PhoneFactory($resource) {
     return $resource('phones/:phoneId.json', {}, {
         query: {
