@@ -5,14 +5,16 @@ import "./lib/angular/angular.js";
 import "./lib/angular-animate/angular-animate.js";
 import "./lib/angular-resource/angular-resource.js";
 import "./lib/ui-router/angular-ui-router.min.js";
+import core from './core/core.module';
 // Define the `phonecatApp` module
-angular.module('phonecatApp', [
+const app = angular.module('phonecatApp', [
   'ngAnimate',
   'ui.router',
-  // 'core',
+  'core',
   // 'phoneDetail',
   // 'phoneList'
 ]);
+core(app);
 
 angular.element(function() {
   angular.bootstrap(document, ['phonecatApp']);

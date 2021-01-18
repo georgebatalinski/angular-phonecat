@@ -1,15 +1,10 @@
-'use strict';
-import * as angular from 'angular';
-angular.
-  module('core.phone').
-  factory('Phone', ['$resource',
-    function($resource) {
-      return $resource('phones/:phoneId.json', {}, {
-        query: {
-          method: 'GET',
-          params: {phoneId: 'phones'},
-          isArray: true
-        }
-      });
+PhoneFactory.$inject = ['$resource'];
+export default function PhoneFactory($resource) {
+  return $resource('phones/:phoneId.json', {}, {
+    query: {
+      method: 'GET',
+      params: {phoneId: 'phones'},
+      isArray: true
     }
-  ]);
+  });
+}
