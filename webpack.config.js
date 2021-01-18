@@ -1,14 +1,19 @@
 module.exports = {
-    entry: './app/index.js',
+    entry: './app/app.module.ts',
     resolve: {
         modules: ['node_modules'],
-        extensions: ['.js', '.jsx', '.css']
+        extensions: ['.js', '.ts', '.css']
     },
     module: {
         rules: [
           {
             test: /\.html$/i,
             loader: 'html-loader',
+          },
+          {
+            test: /\.ts?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/,
           },
         ],
     },

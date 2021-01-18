@@ -1,5 +1,5 @@
 'use strict';
-
+import * as angular from 'angular';
 angular.
   module('core.phone').
   factory('Phone', ['$resource',

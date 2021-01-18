@@ -1,5 +1,5 @@
 'use strict';
-
+var angular = require('angular'); 
 // Define the `phonecatApp` module
 angular.module('phonecatApp', [
   'ngAnimate',
