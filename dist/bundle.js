@@ -88825,12 +88825,12 @@ __webpack_require__(152);
 __webpack_require__(416);
 var core_module_1 = __webpack_require__(723);
 // Define the `phonecatApp` module
+core_module_1.default(angular);
 var app = angular.module('phonecatApp', [
     'ngAnimate',
     'ui.router',
     'core',
 ]);
-core_module_1.default(app);
 angular.element(function () {
     angular.bootstrap(document, ['phonecatApp']);
 });
@@ -88846,7 +88846,7 @@ angular.element(function () {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var phone_service_1 = __webpack_require__(130);
 exports.default = (function (app) {
-    var module = app.module('core', ['core.phone']);
+    var module = app.module('core', []);
     module.factory('Phone', phone_service_1.default);
 });
 
