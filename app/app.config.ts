@@ -1,9 +1,6 @@
 'use strict';
-var angular = require('angular'); 
 
-angular.
-  module('phonecatApp')
-  .config(function($stateProvider) {
+export default ($stateProvider) => {
     var helloState = {
       name: 'phones',
       url: '/phones',
@@ -18,4 +15,4 @@ angular.
   
     $stateProvider.state(helloState);
     $stateProvider.state(aboutState);
-  });
+};

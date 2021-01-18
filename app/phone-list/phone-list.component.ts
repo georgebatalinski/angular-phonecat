@@ -1,9 +1,6 @@
 'use strict';
-var angular = require('angular'); 
-// Register `phoneList` component, along with its associated controller and template
-angular.
-  module('phoneList').
-  component('phoneList', {
+
+ export default {
     template: require('./phone-list.template.html'),
     controller: ['Phone',
       function PhoneListController(Phone) {
@@ -11,4 +8,4 @@ angular.
         this.orderProp = 'age';
       }
     ]
-  });
+  };

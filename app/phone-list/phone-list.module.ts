@@ -1,4 +1,6 @@
 'use strict';
-var angular = require('angular'); 
-// Define the `phoneList` module
-angular.module('phoneList', ['core.phone']);
+import Phone from './phone-list.component';
+export default (app) => {
+    var module = app.module('phoneList', ['core']);
+    module.component('phoneList', Phone);
+}

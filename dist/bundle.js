@@ -88823,53 +88823,32 @@ __webpack_require__(220);
 __webpack_require__(462);
 __webpack_require__(152);
 __webpack_require__(416);
-var core_module_1 = __webpack_require__(723);
+//import * as configFn from "./app.config";
+//import core from './core/core.module';
+//import phonelist from './phone-list/phone-list.module';
 // Define the `phonecatApp` module
-core_module_1.default(angular);
 var app = angular.module('phonecatApp', [
     'ngAnimate',
     'ui.router',
-    'core',
-]);
+]).config(function ($stateProvider) {
+    var helloState = {
+        name: 'phones',
+        url: '/phones',
+        template: '<phone-list></phone-list>'
+    };
+    var aboutState = {
+        name: 'phonesid',
+        url: '/phones/:phoneId',
+        template: '<phone-detail></phone-detail>'
+    };
+    $stateProvider.state(helloState);
+    $stateProvider.state(aboutState);
+});
+//core(angular);
+//phonelist(angular);
 angular.element(function () {
     angular.bootstrap(document, ['phonecatApp']);
 });
-
-
-/***/ }),
-
-/***/ 723:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var phone_service_1 = __webpack_require__(130);
-exports.default = (function (app) {
-    var module = app.module('core', []);
-    module.factory('Phone', phone_service_1.default);
-});
-
-
-/***/ }),
-
-/***/ 130:
-/***/ ((__unused_webpack_module, exports) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-PhoneFactory.$inject = ['$resource'];
-function PhoneFactory($resource) {
-    return $resource('phones/:phoneId.json', {}, {
-        query: {
-            method: 'GET',
-            params: { phoneId: 'phones' },
-            isArray: true
-        }
-    });
-}
-exports.default = PhoneFactory;
 
 
 /***/ })
