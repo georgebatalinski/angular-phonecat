@@ -38,8 +38,8 @@ const app = angular.module(MODULE_NAME, [
 core(angular);
 phonelist(angular);
 
-angular.element(function() {
-  angular.bootstrap(document, ['phonecatApp']);
-});
+// angular.element(function() {
+//   angular.bootstrap(document, ['phonecatApp']);
+// });
 
 export default MODULE_NAME;
