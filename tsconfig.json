@@ -4,6 +4,7 @@
       "noImplicitAny": false,
       "module": "commonjs",
       "moduleResolution": "node",
+      "experimentalDecorators": true,
       "target": "es5",
       "allowJs": true,
       "allowSyntheticDefaultImports": true,
