@@ -19,7 +19,7 @@ const app = angular.module(MODULE_NAME, [
   'core',
   //'phoneDetail',
   'phoneList'
-]).config(($stateProvider) => {
+]).config(['$stateProvider', ($stateProvider) => {
   var helloState = {
     name: 'phones',
     url: '/phones',
@@ -34,7 +34,7 @@ const app = angular.module(MODULE_NAME, [
 
   $stateProvider.state(helloState);
   $stateProvider.state(aboutState);
-});
+}]);
 core(angular);
 phonelist(angular);
 
