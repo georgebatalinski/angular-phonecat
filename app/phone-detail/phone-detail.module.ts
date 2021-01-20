@@ -1,6 +1,5 @@
-'use strict';
-var angular = require('angular'); 
-// Define the `phoneDetail` module
+import * as angular from "angular";
+
 angular.module('phoneDetail', [
   'ui.router',
   'core.phone'

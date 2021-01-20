@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './app/main.ts',
+    entry: './app/app.module.ajs.ts',
     resolve: {
         modules: ['node_modules'],
         extensions: ['.js', '.ts', '.css']

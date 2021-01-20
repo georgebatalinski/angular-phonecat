@@ -1,5 +1,4 @@
-'use strict';
-var angular = require('angular'); 
+import * as angular from "angular";
 // Register `phoneDetail` component, along with its associated controller and template
 angular.
   module('phoneDetail').
