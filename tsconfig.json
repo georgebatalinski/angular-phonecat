@@ -8,6 +8,6 @@
       "target": "es5",
       "allowJs": true,
       "emitDecoratorMetadata": true, 
-      "allowSyntheticDefaultImports": true,
+      "allowSyntheticDefaultImports": true
     }
   }
